@@ -144,6 +144,13 @@ public class Association<K,V> implements Map.Entry<K,V>
         theValue = value;
         return oldValue;
     }
+    
+    public K setKey(K key)
+    {
+        K oldKey = theKey;
+        theKey = key;
+        return oldKey;
+    }
 
     /**
      * Standard string representation of an association.

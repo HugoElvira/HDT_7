@@ -57,7 +57,7 @@ public class BinarySearchTree<E> {
 	public void add(E value)
 	{
 		BinaryTree<E> newNode= new BinaryTree<E>(value, EMPTY, EMPTY);
-		
+		count++;
 		if(root.isEmpty())
 		{
 			root= newNode;
@@ -126,11 +126,18 @@ public class BinarySearchTree<E> {
 		predecessor.setRight(right);
 		return predecessor;
 		
-		/*public Iterator<E> iterator()
+		/*public  Iterator<E> iterator()
 		{
 			return root.inorderIterator();
 		}*/
 		
 		
+	}
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		boolean a= false;
+		if(count==0)
+			a= true;
+		return a;
 	}
 }
