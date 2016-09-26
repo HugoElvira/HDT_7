@@ -129,10 +129,14 @@ public class BinarySearchTree<E> {
 		/*public  Iterator<E> iterator()
 		{
 			return root.inorderIterator();
-		}*/
-		
-		
+		}*/	
 	}
+	
+	public int getCount()
+	{
+		return count;
+	}
+	
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
 		boolean a= false;

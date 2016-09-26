@@ -27,12 +27,12 @@ public class Main {
 				if (i!=','&& r==0)
 				{
 					wordE= wordE+i;
-					System.out.println("WordE:"+ wordE);
+					//System.out.println("WordE:"+ wordE);
 				}
 				if (i==',')
 				{
 					palabra.setKey(wordE);
-					//wordE="";
+					palabra.setEn(wordE);
 					r=1;
 				}
 				if (i!=','&& r==1)
@@ -40,14 +40,16 @@ public class Main {
 					if(i!= ')')
 					{
 						wordS=wordS+i;
-						System.out.println("WordS:"+ wordS);
+						//System.out.println("WordS:"+ wordS);
 					}
 				}
 				if (i==')')
 				{
 					palabra.setValue(wordS);
-					diccionario.addPalabra(palabra);
+					palabra.setSp(wordS);
 					System.out.println(palabra.toString());
+					diccionario.addPalabra(palabra);
+					//System.out.println(diccionario.toString());
 					wordS="";
 					wordE="";
 					r=0;
@@ -60,7 +62,9 @@ public class Main {
 			}
 				
 		}
-		
+		System.out.println("diccionario");
+		diccionario.getTree().inOrderTraversal();
+		System.out.println("diccionario");
 	}
 	
 	public static String leerArchivo(String direccionx) {

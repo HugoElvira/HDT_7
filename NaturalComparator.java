@@ -18,3 +18,19 @@ public class NaturalComparator<T> implements Comparable<T>, Comparator<T> {
 		return 0;
 	}
 }
+
+/*public final class NaturalComparator<E> implements Comparable<T>, Comparator<T> {
+
+	//private static final Comparator<? extends Comparable<?>> instance = new Comparator<Comparable<Object>>(){
+		public int compare(Comparable<Object> o1, Comparable<Object> o2) {
+			if( o1==null || o2==null ){
+				throw new NullPointerException("Comparing null values is not supported!");
+			}
+			return o1.compareTo(o2);
+		}
+	}
+	
+	/*@SuppressWarnings("unchecked")
+	public static <T extends Comparable<?>> Comparator<T> getInstance(){
+		return (Comparator<T>) instance;
+	}*/

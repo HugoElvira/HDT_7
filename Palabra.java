@@ -6,9 +6,7 @@ public class Palabra<K, V> extends Association<K,V> implements Comparable<Palabr
 	
 	public Palabra()
 	{
-		new Association<String,String>();
-		en= null;
-		sp= null;
+		new Association<String,String>(en,sp);
 	}
 	
 	public Palabra(String e, String s)
@@ -21,6 +19,10 @@ public class Palabra<K, V> extends Association<K,V> implements Comparable<Palabr
 	@Override
 	public int compareTo(Palabra<K,V> a) {
 		// TODO Auto-generated method stub
+		/*System.out.println("Metodo compareTo");
+		System.out.println(this.getEn());
+		System.out.println(a.getEn());*/
+		//System.out.println(Integer.compare(this.getEn().hashCode(), a.getEn().hashCode()));
 		return Integer.compare(this.getEn().hashCode(), a.getEn().hashCode());
 	}
 
@@ -39,6 +41,5 @@ public class Palabra<K, V> extends Association<K,V> implements Comparable<Palabr
 	public void setSp(String sp) {
 		this.sp = sp;
 	}
-
 	
 }
