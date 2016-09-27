@@ -100,7 +100,7 @@ public class Traductor {
     
     //compara cada palabra del texto con las almacenadas en el arbol y la traduce
     //devuelve:
-    //*palabra* si no encuentra la palabra en el diccionario
+    //*palabra* si no encuentra la palabra en el  diccionario
     //palabra traducida si encontro coincidencias
     public String traducirPalabra(ArbolBinario<Asociacion<String,String>> padre, String palabra){
     	

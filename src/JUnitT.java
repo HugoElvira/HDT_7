@@ -9,7 +9,7 @@ import org.junit.Test;
  * @ codigo tomado de ejemplos del libro
  */
 
-public class JUnitT {
+public class JUnitT  {
 	Traductor t=new Traductor();
     @Test
     public void testInsertarNodo() {

@@ -3,7 +3,7 @@
  */
 
 /**
- * @author Hugo Elvira 15249, Andrea Pena 15127, Jose Tzoc 13322
+ * @author Hugo Elvira 15249, Andrea Pena 15127, Jose Tzoc  13322
  * @descripcion: implementacion del un arbol binario
  * @ codigo tomado de ejemplos del libro
  */
