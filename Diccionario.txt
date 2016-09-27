@@ -1,0 +1,10 @@
+house,casa
+and,y
+homework,tarea
+woman,mujer
+town,pueblo
+dog,perro
+about,sobre
+asked,pregunto
+my,mi
+The,la
