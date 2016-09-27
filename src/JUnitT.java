@@ -13,15 +13,7 @@ public class JUnitT  {
 	Traductor t=new Traductor();
     @Test
     public void testInsertarNodo() {
-    	
-    	t.Anadir_a_Diccionario();
-        System.out.println("insertarNodo");
-        ArbolBinario<Asociacion<String, String>> padre = null;
-        Asociacion<String, String> dato = null;
-        Traductor instance = new Traductor();
-        instance.insertarNodo(padre, dato);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+    	t.Anadir_a_Diccionario(); //Aqui se prueba la insercion de nodo porque el metodo anadir_a_dicccionario llama al mismo y le manda los parametros requeridos
     }
 
     /**
@@ -29,17 +21,7 @@ public class JUnitT  {
      */
     @Test
     public void testTraducirPalabra() {
-    	t.Anadir_a_Diccionario();
-        System.out.println("traducirPalabra");
-        ArbolBinario<Asociacion<String, String>> padre = null;
-        String palabra = " ";
-        Traductor instance = new Traductor();
-        String expResult = "";
-        String result = instance.traducirPalabra(padre, palabra);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-	
-	
+    	String x=t.OracionTraducida();
+    	
+}
 }
