@@ -1,3 +1,4 @@
+
 /** **************************************************************************
  *                     The  generic Binary Search Tree class.
  *
@@ -8,52 +9,6 @@ import java.util.*;
 
 public class BST <T extends Comparable<T>> implements Iterable<T>
 {
-   public static void main(String[] args)
-   {
-      Integer[] a = {1,5,2,7,4};
-      BST<Integer> bst = new BST<Integer>();
-      for(Integer n : a) bst.insert(n);
-
-      System.out.println("Pre order");
-      bst.preOrderTraversal();
-      System.out.println();
-
-      //testing comparator
-      //build a mirror BST with a rule:  Left > Parent > Right
-      //code for the comparator at the bottom of the file
-      bst = new BST<Integer>(new MyComp1());
-      for(Integer n : a) bst.insert(n);
-
-      System.out.println("Pre order");
-      bst.preOrderTraversal();
-      System.out.println();
-      System.out.println("In order");
-      bst.inOrderTraversal();
-      System.out.println();
-
-
-      for(Integer n : bst) System.out.print(n);
-      System.out.println();
-
-      System.out.println(bst);
-
-      //testing restoring a tree from two given traversals
-      bst.restore(new Integer[] {11,8,6,4,7,10,19,43,31,29,37,49},
-                      new Integer[] {4,6,7,8,10,11,19,29,31,37,43,49});
-      System.out.println("Pre order");
-      bst.preOrderTraversal();
-      System.out.println();
-      System.out.println("In order");
-      bst.inOrderTraversal();
-      System.out.println();
-
-      //testing diameter
-      System.out.println("diameter = " + bst.diameter());
-      //testing width
-      System.out.println("width = " + bst.width());
-   }
-
-
    private Node<T> root;
    private Comparator<T> comparator;
 
@@ -71,9 +26,10 @@ public class BST <T extends Comparable<T>> implements Iterable<T>
 
    private int compare(T x, T y)
    {
-      if(comparator == null) return x.compareTo(y);
+	  if(comparator == null) 
+    	  return x.compareTo(y);
       else
-      return comparator.compare(x,y);
+    	  return comparator.compare(x,y);
    }
 
 /*****************************************************
@@ -87,7 +43,7 @@ public class BST <T extends Comparable<T>> implements Iterable<T>
    }
    private Node<T> insert(Node<T> p, T toInsert)
    {
-      if (p == null)
+	  if (p == null)
          return new Node<T>(toInsert);
 
       if (compare(toInsert, p.data) == 0)
@@ -97,7 +53,7 @@ public class BST <T extends Comparable<T>> implements Iterable<T>
          p.left = insert(p.left, toInsert);
       else
          p.right = insert(p.right, toInsert);
-
+	   
       return p;
    }
 
@@ -208,13 +164,9 @@ public class BST <T extends Comparable<T>> implements Iterable<T>
       if (r != null)
       {
          inOrderHelper(r.left);
-         System.out.print(r+" ");
+         System.out.println(r+"\n");
          inOrderHelper(r.right);
       }
-      /*else
-      {
-    	  System.out.println("null");
-      }*/
    }
 
 /*************************************************
@@ -396,7 +348,7 @@ public class BST <T extends Comparable<T>> implements Iterable<T>
 *
 ******************************************************/
 
-   private class Node<T>
+   public class Node<T>
    {
       private T data;
       private Node<T> left, right;

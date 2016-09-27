@@ -1,0 +1,140 @@
+/**
+ * 
+ */
+
+/**
+ * @author Hugo Elvira 15249, Andrea Maybell Pena 15127
+ * @descripcion: implementacion del un arbol binario
+ * @ codigo tomado de ejemplos del libro
+ */
+public class Asociacion<K,V> implements Comparable<Asociacion<K,V>>
+{
+    /**
+     * The immutable key.  An arbitrary object.
+     */
+    protected K theKey; // the key of the key-value pair
+    /**
+     * The mutable value.  An arbitrary object.
+     */
+    protected V theValue; // the value of the key-value pair
+
+    /*
+      for example:
+      Association<String,Integer> personAttribute =
+         new Assocation<String,Integer>("Age",34);
+     */
+    /**
+     * Constructs a pair from a key and value.
+     *
+     * @pre key is non-null
+     * @post constructs a key-value pair
+     * @param key A non-null object.
+     * @param value A (possibly null) object.
+     */
+    public Asociacion(K key, V value)
+    {
+        
+        theKey = key;
+        theValue = value;
+    }
+
+    /**
+     * Constructs a pair from a key; value is null.
+     *
+     * @pre key is non-null
+     * @post constructs a key-value pair; value is null
+     * @param key A non-null key value.
+     */
+    public Asociacion(K key)
+    {
+        this(key,null);
+    }
+
+    /**
+     * Standard comparison function.  Comparison based on keys only.
+     *
+     * @pre other is non-null Association
+     * @post returns true iff the keys are equal
+     * @param other Another association.
+     * @return true iff the keys are equal.
+     */
+    public boolean equals(Object other)
+    {
+        Asociacion otherAssoc = (Asociacion)other;
+        return getKey().equals(otherAssoc.getKey());
+    }
+    
+    /**
+     * Standard hashcode function.
+     *
+     * @post return hash code association with this association
+     * @return A hash code for association.
+     * @see Hashtable
+     */
+    public int hashCode()
+    {
+        return getKey().hashCode();
+    }
+    
+    /**
+     * Fetch value from association.  May return null.
+     *
+     * @post returns value from association
+     * @return The value field of the association.
+     */
+    public V getValue()
+    {
+        return theValue;
+    }
+
+    /**
+     * Fetch key from association.  Should not return null.
+     *
+     * @post returns key from association
+     * @return Key of the key-value pair.
+     */
+    public K getKey()
+    {
+        return theKey;
+    }
+
+    /**
+     * Sets the value of the key-value pair.
+     *
+     * @post sets association's value to value
+     * @param value The new value.
+     */
+    public V setValue(V value)
+    {
+        V oldValue = theValue;
+        theValue = value;
+        return oldValue;
+    }
+
+    /**
+     * Standard string representation of an association.
+     *
+     * @post returns string representation
+     * @return String representing key-value pair.
+     */
+    public String toString()
+    {
+        StringBuffer s = new StringBuffer();
+        s.append("("+getKey()+","+getValue()+")");
+        return s.toString();
+    }
+    
+    @Override
+	public int compareTo(Asociacion<K,V> a) {
+		// TODO Auto-generated method stub
+		int i= (300 - ((String) this.getKey()).codePointAt(0))*400 + (300 - ((String) this.getKey()).codePointAt(1))*100 + (300 - ((String) this.getKey()).codePointAt(2))*20;
+		int j= (300 - ((String) a.getKey()).codePointAt(0))*400 + (300 - ((String) a.getKey()).codePointAt(1))*100 + (300 - ((String) a.getKey()).codePointAt(2))*20;
+		return Integer.compare(j, i);
+		//return Integer.compare(this.getEn().hashCode(), a.getEn().hashCode());
+	}
+
+    /*
+...
+*/
+}
+
